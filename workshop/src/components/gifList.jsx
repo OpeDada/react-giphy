@@ -8,6 +8,8 @@ const GifList = () => {
       <Gif />
       <Gif />
       <Gif />
+      <Gif />
+      <Gif />
 
     </div>
   );
