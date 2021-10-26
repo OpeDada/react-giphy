@@ -1,11 +1,14 @@
 import React from 'react';
 
-const Gif = () => {
-  return (
-    <div>
-      <img src="https://media.giphy.com/media/gG6OcTSRWaSis/giphy.gif" alt="gif" className="gif" />
-    </div>
-  );
-};
+// eslint-disable-next-line react/prefer-stateless-function
+class Gif extends React.Component {
+  render() {
+    const { id } = this.props;
+    const url = `https://media.giphy.com/media/${id}/giphy.gif`
+    return (
+      <img src={url} alt="gif" className="gif" />
+    );
+  }
+}
 
 export default Gif;
