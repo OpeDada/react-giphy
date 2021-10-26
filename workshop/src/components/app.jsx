@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import SearchBar from './searchBar';
 import Gif from './gif';
 import GifList from './gifList';
-import SearchBar from './searchBar';
 
-// eslint-disable-next-line react/prefer-stateless-function
+const giphy = require('giphy-api')({
+  apiKey: 'KsltJNEs1v3QDDVlinP6EFo2GqjFxgRR',
+  https: true
+});
+
 class App extends React.Component {
   // const gifList = ["WuGSL4LFUMQU", "HuVCpmfKheI2Q", "u6uAu3yyDNqRq"];
   constructor(props) {
@@ -21,7 +25,7 @@ class App extends React.Component {
   }
 
   render() {
-    const [ selectedId, ids] = this.state;
+    const { selectedId, ids } = this.state;
     return (
       <div>
         <div className="left-scene">
@@ -31,11 +35,14 @@ class App extends React.Component {
           </div>
         </div>
         <div className="right-scene">
-          <GifList ids={ids} />
+          <GifList
+            ids={ids}
+            changeSelectedGif={this.changeSelectedGif}
+          />
         </div>
       </div>
     );
   }
-};
+}
 
 export default App;
