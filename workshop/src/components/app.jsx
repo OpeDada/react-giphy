@@ -24,12 +24,24 @@ class App extends React.Component {
     });
   }
 
+  changeGifIds = (keyword) => {
+    giphy.search({
+      q: keyword,
+      rating: 'g',
+      limit: 10
+    }, (err, res) => {
+      this.setState({
+        ids: res.data.map(gif => gif.id)
+      });
+    });
+  }
+
   render() {
     const { selectedId, ids } = this.state;
     return (
       <div>
         <div className="left-scene">
-          <SearchBar />
+          <SearchBar changeGifIds={this.changeGifIds} />
           <div className="selected-gif">
             <Gif id={selectedId} />
           </div>
