@@ -2,9 +2,12 @@ import React from 'react';
 
 const SearchBar = () => {
   return (
-    <div>
-
-    </div>
+    <input
+      type="text"
+      className="form-control
+      form-search"
+      placeholder=""
+    />
   );
 };
 
