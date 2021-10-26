@@ -31,7 +31,7 @@ class App extends React.Component {
       limit: 10
     }, (err, res) => {
       this.setState({
-        ids: res.data.map(gif => gif.id)
+        ids: res.data.map((gif) => gif.id)
       });
     });
   }
