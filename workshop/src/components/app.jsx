@@ -15,7 +15,7 @@ const App = () => {
         </div>
       </div>
       <div className="right-scene">
-        <GifList gifIds={gifList} />
+        <GifList gifIds={GifList} />
       </div>
     </div>
   );
